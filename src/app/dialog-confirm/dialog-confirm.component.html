@@ -1,0 +1,11 @@
+<form (submit)="ok();">
+  <h2 mat-dialog-title>{{title}}</h2>
+  <p></p>
+  <div class="msg">
+    {{message}}
+  </div>
+  <mat-dialog-actions>
+      <button type='button' mat-button (click)="cancel()">Нет</button>  
+      <button color="primary" mat-button cdkFocusInitial>Да</button>  
+  </mat-dialog-actions>
+</form>

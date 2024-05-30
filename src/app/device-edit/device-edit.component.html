@@ -1,0 +1,87 @@
+<div class="dlg">
+    @if (progress) {
+        <mat-progress-bar class="progressbar" mode="indeterminate"></mat-progress-bar>
+    }
+    <form #cardForm="ngForm" [formGroup]="formGroup" (ngSubmit)="save()">
+        @if (!progress) {
+            <div>
+                <div fxLayout="row" fxLayoutAlign="space-around center" [style.color]="success ? 'green' : 'red'">
+                    {{message}}
+                </div>
+                <div fxLayout="column" fxLayoutAlign="stretch" >
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Address</mat-label>
+                            <input matInput type="text" placeholder="Address" formControlName="addr">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput type="text" placeholder="name" autocomplete="name" formControlName="name">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Activation</mat-label>
+                            <input matInput type="text" placeholder="activation" formControlName="activation">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Class</mat-label>
+                            <input matInput type="text" placeholder="Class" formControlName="class">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>deveui</mat-label>
+                            <input matInput type="text" placeholder="Device EUI" formControlName="deveui">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>App EUI</mat-label>
+                            <input matInput type="text" placeholder="App EUI" formControlName="appeui">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Network session key</mat-label>
+                            <input matInput type="text" placeholder="Network session key" formControlName="nwkSKey">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>App session key</mat-label>
+                            <input matInput type="text" placeholder="App session key" formControlName="appSKey">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Network key</mat-label>
+                            <input matInput type="text" placeholder="Network key" formControlName="nwkKey">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>App key</mat-label>
+                            <input matInput type="text" placeholder="App key" formControlName="appKey">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Device nonce</mat-label>
+                            <input matInput type="text" placeholder="Device nonce" formControlName="devNonce">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Join nonce</mat-label>
+                            <input matInput type="text" placeholder="Join nonce" formControlName="joinNonce">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Version</mat-label>
+                            <input matInput type="text" placeholder="Version" formControlName="version">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <button mat-button type="button" color="accent" matTooltip="Удалить" (click)="rm()"><mat-icon>delete</mat-icon></button>  
+                        <button mat-button type="button" matTooltip="Закрыть" (click)="cancel()">Отменить</button>  
+                        <button color="primary" mat-button type="submit">Сохранить</button>  
+                    </div>
+                </div>
+            </div>
+        }
+    </form>
+</div>
