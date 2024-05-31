@@ -47,6 +47,7 @@ export class DeviceEditComponent implements OnInit {
       request.addr = a ? a : '0';
       this.json.getDeviceByAddr(request).subscribe(v => {
         this.value = v;
+        console.log(this.value);
         this.initForm();
       });
     } else {
@@ -78,9 +79,20 @@ export class DeviceEditComponent implements OnInit {
 
   save(): void {
     const r = new RequestChangeDevice;
-    
-    r.value.addr = this.formGroup.getRawValue().addr;
-    r.value.name = this.formGroup.getRawValue().name;
+    const v = this.formGroup.getRawValue();
+    r.value.addr = v.addr;
+    r.value.activation = v.activation;
+    r.value.class = v.class;
+    r.value.deveui = v.deveui;
+    r.value.nwkSKey = v.nwkSKey;
+    r.value.appSKey = v.appSKey;
+    r.value.version = v.version;
+    r.value.appeui = v.appeui;
+    r.value.appKey = v.appKey;
+    r.value.nwkKey = v.nwkKey;
+    r.value.devNonce = v.devNonce;
+    r.value.joinNonce = v.joinNonce;
+    r.value.name = v.name;
     r.operationSymbol = r.value.addr ? '=' : '+';
     
     // save box

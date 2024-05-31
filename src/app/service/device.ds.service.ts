@@ -5,6 +5,7 @@ import { JsonService } from '../service/json.service';
 import { Device } from '../model/device';
 import { RequestLs } from '../model/request-ls-device';
 import { EnvService } from './env.service';
+import { RequestCount } from '../model/request-count-device';
 
 /**
  * @see https://blog.angular-university.io/angular-material-data-table/
@@ -37,15 +38,17 @@ export class DeviceDataSource implements DataSource<Device> {
     // this.env.settings
     this.loadingSubject.next(true);
     let r = new RequestLs;
-    this.service.lsDevice(r)
-    .subscribe(
-      value => {
-        if (value.length) 
-          this.count = value.length;
-        else
-          this.count = 0;
-        this.subject.next(value);
-        this.loadingSubject.next(false);
-      });
+    r.offset = ofs;
+    r.size = pagesize;
+    let rCount = new RequestCount;
+    this.service.countDevice(rCount).subscribe(v => {
+      this.count = v;
+      this.service.lsDevice(r)
+      .subscribe(
+        value => {
+          this.subject.next(value);
+          this.loadingSubject.next(false);
+        });
+    });
   }
 }

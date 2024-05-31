@@ -1,16 +1,12 @@
-export class RequestLs {
-    tag = 'l';
+export class RequestCount {
+    tag = 'c';
     code = '2a';
     accessCode = '2a';
-    offset = 0;
-    size = 10;
 
     public reset(): void {
-        this.tag = 'l';
+        this.tag = 'c';
         this.code = '2a';
         this.accessCode = '2a';
-        this.offset = 0;
-        this.size = 10;
     }
 
     public assign(value: object): void {
