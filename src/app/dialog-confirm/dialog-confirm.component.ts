@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -8,7 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   templateUrl: './dialog-confirm.component.html',
   standalone: true,
   styleUrls: ['./dialog-confirm.component.scss'],
-  imports: [MatIconModule, MatPaginatorModule, MatDialogModule],
+  imports: [MatIconModule, MatPaginatorModule, MatDialogModule, MatButtonModule],
 })
 export class DialogConfirmComponent implements OnInit {
   title: string;

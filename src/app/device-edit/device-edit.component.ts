@@ -41,34 +41,32 @@ export class DeviceEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initForm();
     if (this.route.snapshot.paramMap.has('addr')) {
       let request = new RequestGetByAddr;
       const a = this.route.snapshot.paramMap.get('addr');
       request.addr = a ? a : '0';
       this.json.getDeviceByAddr(request).subscribe(v => {
         this.value = v;
-        console.log(this.value);
         this.initForm();
       });
-    } else {
-      this.initForm();
     }
   }
 
   private initForm() {
     this.formGroup = this.formBuilder.group({
-      addr: [this.value ? this.value.addr : '', [ Validators.required]],
-      activation: [this.value ? this.value.activation : 'ABP', [ Validators.required]],
-      class: [this.value ? this.value.class : 'A', [ Validators.required]],
-      deveui: [this.value ? this.value.deveui : '', [ Validators.required]],
-      nwkSKey: [this.value ? this.value.nwkSKey : '', [ Validators.required]],
-      appSKey: [this.value ? this.value.appSKey : '', [ Validators.required]],
-      version: [this.value ? this.value.version : '1.0.0', [ Validators.required]],
-      appeui: [this.value ? this.value.appeui : '', [ Validators.required]],
-      appKey: [this.value ? this.value.appKey : '', [ Validators.required]],
-      nwkKey: [this.value ? this.value.nwkKey : '', [ Validators.required]],
-      devNonce: [this.value ? this.value.devNonce : '', [ Validators.required]],
-      joinNonce: [this.value ? this.value.joinNonce : '', [ Validators.required]],
+      addr: [this.value ? this.value.addr : '', [ Validators.required ]],
+      activation: [this.value ? this.value.activation : 'ABP', [ Validators.required ]],
+      class: [this.value ? this.value.class : 'A', [ Validators.required ]],
+      deveui: [this.value ? this.value.deveui : '', [ Validators.required ]],
+      nwkSKey: [this.value ? this.value.nwkSKey : '', [ Validators.required ]],
+      appSKey: [this.value ? this.value.appSKey : '', [ Validators.required ]],
+      version: [this.value ? this.value.version : '1.0.0', [ Validators.required ]],
+      appeui: [this.value ? this.value.appeui : '', [ Validators.required ]],
+      appKey: [this.value ? this.value.appKey : '', [ Validators.required ]],
+      nwkKey: [this.value ? this.value.nwkKey : '', [ Validators.required ]],
+      devNonce: [this.value ? this.value.devNonce : '', [ Validators.required ]],
+      joinNonce: [this.value ? this.value.joinNonce : '', [ Validators.required ]],
       name: [this.value ? this.value.name : '', []]
     });
    }
@@ -105,9 +103,10 @@ export class DeviceEditComponent implements OnInit {
   rm(): void {
     const r = new RequestChangeDevice;
     r.operationSymbol = '-';
-    r.value.addr = this.formGroup.getRawValue().addr
+    r.value.addr = this.formGroup.getRawValue().addr;
+    r.value.name = this.formGroup.getRawValue().name;
     this.app.confirmRmDevice(r).then(v => {
-      if (v = 'y')
+      if (v == 'y')
         this.changed.emit(r);
     })
   }

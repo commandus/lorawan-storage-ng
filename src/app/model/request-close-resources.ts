@@ -1,12 +1,12 @@
-import { Credentials } from "./credentials";
-
-export class Settings {
-    darkMode = false;
-    credentials = new Credentials;
+export class RequestCloseResources {
+    tag = 'e';
+    code = '2a';
+    accessCode = '2a';
 
     public reset(): void {
-        this.darkMode = false;
-        this.credentials = new Credentials;
+        this.tag = 'e';
+        this.code = '2a';
+        this.accessCode = '2a';
     }
 
     public assign(value: object): void {
@@ -29,9 +29,4 @@ export class Settings {
         
         }
     }
-
-    public save(): void {
-        localStorage.setItem('settings', JSON.stringify(this));
-    }
-
 }

@@ -7,6 +7,7 @@ import { RequestChangeDevice } from '../model/request-ch-device';
 import { RequestGetByAddr } from '../model/request-get-by-addr';
 import { RequestGetByEui } from '../model/request-get-by-eui';
 import { RequestCount } from '../model/request-count-device';
+import { RequestCloseResources } from '../model/request-close-resources';
 
 class EndPoint {
   public url = "";
@@ -57,7 +58,11 @@ export class JsonService {
   constructor(private httpClient: HttpClient) { }
 
   getDeviceByAddr(request: RequestGetByAddr): Observable<Device> {
-    return this.httpClient.post<Device>(this.endpoints.current.url, request);
+    return this.httpClient.post<Device>(this.endpoints.current.url, request).pipe(
+      map((value:Device) => {
+        value.addr = request.addr;
+        return value;
+    }));
   }
   getDeviceByEui(request: RequestGetByEui): Observable<Device> {
     return this.httpClient.post<Device>(this.endpoints.current.url, request);
@@ -74,4 +79,9 @@ export class JsonService {
   chDevice(request: RequestChangeDevice): Observable<Device> {
     return this.httpClient.post<Device>(this.endpoints.current.url, request);
   }
+
+  closeResources(request: RequestCloseResources): Observable<Device> {
+    return this.httpClient.post<Device>(this.endpoints.current.url, request);
+  }
+
 }

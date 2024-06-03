@@ -1,0 +1,2 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<app-login [credentials]="env.settings.credentials" (logged)="onLogged($event)" (cancelled)="onCancel()"></app-login>

@@ -11,6 +11,8 @@ import { RequestChangeDevice } from '../model/request-ch-device';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { DeviceEditDialogComponent } from '../device-edit-dialog/device-edit-dialog.component';
 import { JsonService } from './json.service';
+import { Credentials } from '../model/credentials';
+import { DialogLoginComponent } from '../dialog-login/dialog-login.component';
 
 @Injectable({
   providedIn: 'root'
@@ -141,6 +143,21 @@ export class EnvService {
     });
   }
 
-
+  public login() : Promise<string> {
+    const d = new MatDialogConfig();
+    d.autoFocus = true;
+    d.data = {
+      value: this.settings.credentials
+    };
+    const dialogRef = this.dialog.open(DialogLoginComponent, d);
+    return new Promise<string>((resolve, reject) => { 
+      dialogRef.componentInstance.logged.subscribe((v: Credentials) => {
+        resolve('yes');
+      });
+      dialogRef.componentInstance.cancelled.subscribe((v: Credentials) => {
+        reject('no');
+      });
+    });
+  }
 
 }
