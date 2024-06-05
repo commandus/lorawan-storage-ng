@@ -4,12 +4,12 @@
     <mat-progress-bar class="progressbar" mode="indeterminate"></mat-progress-bar>
     }
     </div>
-    <form #orderForm="ngForm" [formGroup]="formGroup" (ngSubmit)="login()">
-        <div fxLayout="row" fxLayoutAlign="space-around center" [style.color]="success ? 'green' : 'red'">
+    <form [formGroup]="formGroup" (ngSubmit)="login()">
+        <div [style.color]="success ? 'green' : 'red'">
             {{message}}
         </div>
         <p></p>
-        <div fxLayout="column" fxLayoutAlign="stretch" >
+        <div>
             <div>
                 <mat-form-field class="f">
                     <mat-label>Code</mat-label>
@@ -23,7 +23,7 @@
                 </mat-form-field>
             </div>
             <div>
-                <div fxLayout="row" fxLayoutAlign="end stretch">
+                <div>
                     <button mat-button (click)="cancel()">Cancel</button>  
                     <button color="primary" mat-button type="submit">Login</button>  
                 </div>

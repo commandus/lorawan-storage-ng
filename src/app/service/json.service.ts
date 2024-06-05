@@ -8,12 +8,7 @@ import { RequestGetByAddr } from '../model/request-get-by-addr';
 import { RequestGetByEui } from '../model/request-get-by-eui';
 import { RequestCount } from '../model/request-count-device';
 import { RequestCloseResources } from '../model/request-close-resources';
-
-class EndPoint {
-  public url = "";
-  public name = "";
-  public selected = false;
-}
+import { EndPointList } from '../model/service-end-point';
 
 // @see https://stackoverflow.com/questions/65152373/typescript-serialize-bigint-in-json
 declare global
@@ -30,32 +25,15 @@ BigInt.prototype.toJSON = function () {
 
 BigInt.prototype.toJSON = function() { return this.toString() }
 
-export class EndPointList {
-  public endpoints: EndPoint[] = [
-    { url: "http://localhost:4246", name: "Тест(локальный)", selected: true }
-  ];
-  public current = this.endpoints[0];
-
-  public select(name: string | null) : void {
-    if (name == null) {
-      this.current = this.endpoints[0];
-      return;
-    }
-    this.endpoints.forEach(e => {
-      e.selected = e.name == name;
-      if (e.selected)
-        this.current = e;
-    });
-  }
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class JsonService {
   public endpoints = new EndPointList;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.endpoints.add({ url: "http://localhost:4246", name: "Тест(локальный)", selected: true });
+   }
 
   getDeviceByAddr(request: RequestGetByAddr): Observable<Device> {
     return this.httpClient.post<Device>(this.endpoints.current.url, request).pipe(

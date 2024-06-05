@@ -5,38 +5,38 @@
 </div>
  <table mat-table [dataSource]="ds" matSort>
   <ng-container matColumnDef="addr">
-      <th mat-header-cell *matHeaderCellDef>Address</th>
-      <td mat-cell *matCellDef="let v" matTooltip="Device address">
+      <th i18n="@@address" mat-header-cell *matHeaderCellDef>Address</th>
+      <td i18n-matTooltip="@@address" mat-cell *matCellDef="let v" matTooltip="Device address">
         {{ v.addr }}
       </td>
   </ng-container>
   <ng-container matColumnDef="activation">
-    <th mat-header-cell *matHeaderCellDef>Activation</th>
-    <td mat-cell *matCellDef="let v" matTooltip="Activation type: ABP or OTAA">
+    <th i18n="@@activation" mat-header-cell *matHeaderCellDef>Activation</th>
+    <td i18n-matTooltip="@@activation" mat-cell *matCellDef="let v" matTooltip="Activation type: ABP or OTAA">
       {{ v.activation }}
     </td>
 </ng-container>
 <ng-container matColumnDef="class">
-    <th mat-header-cell *matHeaderCellDef>Class</th>
-    <td mat-cell *matCellDef="let v" matTooltip="Device class: A, B or C">
+    <th i18n="@@class" mat-header-cell *matHeaderCellDef>Class</th>
+    <td i18n-matTooltip="@@class-description" mat-cell *matCellDef="let v" matTooltip="Device class: A, B or C">
       {{ v.class }}
     </td>
 </ng-container>
 <ng-container matColumnDef="deveui">
-    <th mat-header-cell *matHeaderCellDef>Device EUI</th>
-    <td mat-cell *matCellDef="let v" matTooltip="Device EUI">
+    <th i18n="@@deveui" mat-header-cell *matHeaderCellDef>Device EUI</th>
+    <td i18n-matTooltip="@@deveui" mat-cell *matCellDef="let v" matTooltip="Device EUI">
       {{ v.deveui }}
     </td>
 </ng-container>
 <ng-container matColumnDef="nwkSKey">
-    <th mat-header-cell *matHeaderCellDef>Network session key</th>
-    <td mat-cell *matCellDef="let v" matTooltip="nwkSKey">
+    <th i18n-matTooltip="@@nwkskey" mat-header-cell *matHeaderCellDef>Network session key</th>
+    <td i18n-matTooltip="@@nwkskey" mat-cell *matCellDef="let v" matTooltip="Network session key">
       {{ v.nwkSKey }}
     </td>
 </ng-container>
 <ng-container matColumnDef="appSKey">
-    <th mat-header-cell *matHeaderCellDef>App session key</th>
-    <td mat-cell *matCellDef="let v" matTooltip="appSKey">
+    <th i18n="@@appskey" mat-header-cell *matHeaderCellDef>App session key</th>
+    <td i18n-matTooltip="@@appskey" mat-cell *matCellDef="let v" matTooltip="appSKey">
       {{ v.appSKey }}
     </td>
 </ng-container>
@@ -47,38 +47,38 @@
     </td>
 </ng-container>
 <ng-container matColumnDef="appeui">
-    <th mat-header-cell *matHeaderCellDef>App EUI</th>
-    <td mat-cell *matCellDef="let v" matTooltip="appeui">
+    <th i18n="@@appeui" mat-header-cell *matHeaderCellDef>App EUI</th>
+    <td i18n-matTooltip="@@appeui" mat-cell *matCellDef="let v" matTooltip="App EUI">
       {{ v.appeui }}
     </td>
 </ng-container>
 <ng-container matColumnDef="appKey">
-    <th mat-header-cell *matHeaderCellDef>App key</th>
-    <td mat-cell *matCellDef="let v" matTooltip="appKey">
+    <th i18n="@@appkey" mat-header-cell *matHeaderCellDef>App key</th>
+    <td i18n-matTooltip="@@appkey" mat-cell *matCellDef="let v" matTooltip="App Key">
       {{ v.appKey }}
     </td>
 </ng-container>
 <ng-container matColumnDef="nwkKey">
-    <th mat-header-cell *matHeaderCellDef>Network key</th>
-    <td mat-cell *matCellDef="let v" matTooltip="nwkKey">
+    <th i18n="@@nwkkey" mat-header-cell *matHeaderCellDef>Network key</th>
+    <td i18n-matTooltip="@@nwkkey" mat-cell *matCellDef="let v" matTooltip="Network key">
       {{ v.nwkKey }}
     </td>
 </ng-container>
 <ng-container matColumnDef="devNonce">
-    <th mat-header-cell *matHeaderCellDef>Device nonce</th>
-    <td mat-cell *matCellDef="let v" matTooltip="devNonce">
+    <th i18n="@@devnonce" mat-header-cell *matHeaderCellDef>Device nonce</th>
+    <td i18n-matTooltip="@@devnonce" mat-cell *matCellDef="let v" matTooltip="devNonce">
       {{ v.devNonce }}
     </td>
 </ng-container>
 <ng-container matColumnDef="joinNonce">
-    <th mat-header-cell *matHeaderCellDef>Join nonce</th>
-    <td mat-cell *matCellDef="let v" matTooltip="joinNonce">
+    <th i18n="@@joinnonce" mat-header-cell *matHeaderCellDef>Join nonce</th>
+    <td i18n-matTooltip="@@joinnonce" mat-cell *matCellDef="let v" matTooltip="Join nonce">
       {{ v.joinNonce }}
     </td>
 </ng-container>
 <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Name</th>
-    <td mat-cell *matCellDef="let v" matTooltip="Opional device name (up to 8 characters)">
+    <th i18n="@@name" mat-header-cell *matHeaderCellDef>Name</th>
+    <td i18n-matTooltip="@@name-description" mat-cell *matCellDef="let v" matTooltip="Opional device name (up to 8 characters)">
       {{v.name}}
     </td>
   </ng-container>
@@ -87,5 +87,5 @@
 </table>
 <mat-paginator [pageSize]="10"></mat-paginator>
 <div fxLayout="row" fxLayoutAlign="space-between center">
-  <button mat-button color="primary" matTooltip="Add a new device" (click)="add()"><mat-icon>add</mat-icon></button>
+  <button i18n-matTooltip="@@add-device" mat-button color="primary" matTooltip="Add a new device" (click)="add()"><mat-icon>add</mat-icon></button>
 </div>

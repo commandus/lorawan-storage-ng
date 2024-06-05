@@ -102,7 +102,7 @@ export class EnvService {
     d.disableClose = true;
     d.data = {
       title: 'Delete device  "' + v.value.name + ' ' + v.value.addr,
-        message: 'Нажмите <Enter> для безвозвратного удаления',
+        message: 'Press <Enter> to confirm',
         value: v
     };
     const dialogRef = this.dialog.open(DialogConfirmComponent, d);

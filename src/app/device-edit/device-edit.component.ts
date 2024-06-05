@@ -11,13 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JsonService } from '../service/json.service';
 import { RequestGetByAddr } from '../model/request-get-by-addr';
+import { UrnService } from '../service/urn.service';
 
 @Component({
   selector: 'app-device-edit',
   templateUrl: './device-edit.component.html',
   standalone: true,
   styleUrls: ['./device-edit.component.scss'],
-  imports: [ ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatProgressBarModule, MatButtonModule ]
+  imports: [ ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatProgressBarModule, MatButtonModule
+   ]
 })
 export class DeviceEditComponent implements OnInit {
   @Input() value: Device = new Device;
@@ -35,7 +37,8 @@ export class DeviceEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private app: EnvService,
-    private json: JsonService
+    private json: JsonService,
+    private urn: UrnService
   ) {
     this.success = true;
   }
@@ -50,7 +53,17 @@ export class DeviceEditComponent implements OnInit {
         this.value = v;
         this.initForm();
       });
+    } else {
+      this.urn.getUrnByAddr(this.value.addr).subscribe(v => {
+        console.log(v);
+        this.buildQrCode(v);
+      });
+
     }
+  }
+
+  buildQrCode(v: string) {
+    console.log(v);
   }
 
   private initForm() {
