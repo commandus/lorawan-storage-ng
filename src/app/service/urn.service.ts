@@ -12,9 +12,18 @@ export class UrnService {
     this.endpoints.add({ url: "http://localhost:4248", name: "Тест(локальный)", selected: true });
   }
 
-  getUrnByAddr(addr: string): Observable<string> {
+  getURNByAddr(addr: string): Observable<string> {
     const urn = 'LW:D0:::PXA' + addr;
     return this.httpClient.post(this.endpoints.current.url, urn, { responseType: 'text' });
   }
-  
+
+  url(addr: string): string {
+    return this.endpoints.current.url + '/qr?LW:D0:::PXA' + addr;
+  }
+
+  getSVGByAddr(addr: string): Observable<string> {
+    const urn = 'LW:D0:::PXA' + addr;
+    return this.httpClient.post(this.endpoints.current.url + '/qr', urn, { responseType: 'text' });
+  }
+
 }

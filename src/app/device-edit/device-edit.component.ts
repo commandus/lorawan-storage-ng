@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EnvService } from '../service/env.service';
 import { Device } from '../model/device';
 import { RequestChangeDevice } from '../model/request-ch-device';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,7 +19,8 @@ import { UrnService } from '../service/urn.service';
   templateUrl: './device-edit.component.html',
   standalone: true,
   styleUrls: ['./device-edit.component.scss'],
-  imports: [ ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatProgressBarModule, MatButtonModule
+  imports: [ ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatProgressBarModule, MatButtonModule,
+    MatAutocompleteModule
    ]
 })
 export class DeviceEditComponent implements OnInit {
@@ -38,7 +40,7 @@ export class DeviceEditComponent implements OnInit {
     private route: ActivatedRoute,
     private app: EnvService,
     private json: JsonService,
-    private urn: UrnService
+    public urn: UrnService
   ) {
     this.success = true;
   }
@@ -54,8 +56,7 @@ export class DeviceEditComponent implements OnInit {
         this.initForm();
       });
     } else {
-      this.urn.getUrnByAddr(this.value.addr).subscribe(v => {
-        console.log(v);
+      this.urn.getSVGByAddr(this.value.addr).subscribe(v => {
         this.buildQrCode(v);
       });
 
