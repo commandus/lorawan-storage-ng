@@ -37,3 +37,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Acknowledgement
 
 Code generator library (TypeScript) Copyright (c) Project Nayuki. (MIT License) https://www.nayuki.io/page/qr-code-generator-library
+
+
+```
+ng extract-i18n --output-path src/locale
+```
