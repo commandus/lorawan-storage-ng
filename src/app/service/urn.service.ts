@@ -21,6 +21,10 @@ export class UrnService {
     return this.endpoints.current.url + '/qr?LW:D0:::PXA' + addr;
   }
 
+  urlProprietary(addr: string): string {
+    return this.endpoints.current.url + '/qr/proprietary?LW:D0:::PXA' + addr;
+  }
+
   getSVGByAddr(addr: string): Observable<string> {
     const urn = 'LW:D0:::PXA' + addr;
     return this.httpClient.post(this.endpoints.current.url + '/qr', urn, { responseType: 'text' });
