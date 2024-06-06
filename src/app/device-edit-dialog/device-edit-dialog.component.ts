@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Device } from '../model/device';
-import { RequestChangeDevice } from '../model/request-ch-device';
+import { RequestPutDevice } from '../model/request-put-device';
 import { DeviceEditComponent } from '../device-edit/device-edit.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { DeviceEditComponent } from '../device-edit/device-edit.component';
   imports: [ DeviceEditComponent ]
 })
 export class DeviceEditDialogComponent {
-  @Output() changed = new EventEmitter<RequestChangeDevice>();
+  @Output() changed = new EventEmitter<RequestPutDevice>();
   @Output() cancelled = new EventEmitter<void>();
   title: string;
   message: string;
@@ -27,7 +27,7 @@ export class DeviceEditDialogComponent {
     this.value = data.value ? data.value : new Device();
   }
 
-  onChanged(value: RequestChangeDevice) {
+  onChanged(value: RequestPutDevice) {
     this.changed.emit(value);
     this.dialogRef.close( { yes: true } );
   }

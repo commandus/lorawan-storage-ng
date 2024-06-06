@@ -5,7 +5,7 @@
     {{message}}
   </div>
   <mat-dialog-actions>
-      <button type='button' mat-button (click)="cancel()">Yes</button>  
-      <button color="primary" mat-button cdkFocusInitial>No</button>  
+      <button i18n="@@no" i18n-matTooltip="@@no" matTooltip="No" type='button' mat-button (click)="cancel()">No</button>  
+      <button i18n="@@yes" i18n-matTooltip="@@yes" matTooltip="Yes" color="primary" mat-button cdkFocusInitial>Yes</button>  
   </mat-dialog-actions>
 </form>

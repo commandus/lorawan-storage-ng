@@ -1,6 +1,6 @@
 export class Credentials {
     public code = '2a';
-    public accesscode = '2a';
+    public accessCode = '2a';
 
     constructor(value: any = {}) {
         this.reset();
@@ -27,11 +27,10 @@ export class Credentials {
   
     public logout(): void {
         this.reset();
-        localStorage.removeItem('user');
     }
 
     private reset() {
         this.code = '2a';
-        this.accesscode = '2a';
+        this.accessCode = '2a';
     }
 }

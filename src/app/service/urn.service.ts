@@ -9,7 +9,7 @@ import { EndPointList } from '../model/service-end-point';
 export class UrnService {
   public endpoints = new EndPointList;
   constructor(private httpClient: HttpClient) {
-    this.endpoints.add({ url: "http://localhost:4248", name: "Тест(локальный)", selected: true });
+    this.endpoints.add({ url: "http://localhost:4248", name: $localize `:@@endpoint-name-test-local:Test (local host)`, selected: true });
   }
 
   getURNByAddr(addr: string): Observable<string> {

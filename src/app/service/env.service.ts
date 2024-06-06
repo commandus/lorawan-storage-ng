@@ -7,12 +7,13 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 
 import { Settings } from '../model/settings';
 import { Device } from '../model/device';
-import { RequestChangeDevice } from '../model/request-ch-device';
+import { RequestPutDevice } from '../model/request-put-device';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { DeviceEditDialogComponent } from '../device-edit-dialog/device-edit-dialog.component';
 import { JsonService } from './json.service';
 import { Credentials } from '../model/credentials';
 import { DialogLoginComponent } from '../dialog-login/dialog-login.component';
+import { RequestRemoveDevice } from '../model/request-rm-device';
 
 @Injectable({
   providedIn: 'root'
@@ -96,13 +97,13 @@ export class EnvService {
   }
 
   public confirmRmDevice(
-    v: RequestChangeDevice): Promise<string> {
+    v: RequestRemoveDevice): Promise<string> {
     const d = new MatDialogConfig();
     d.autoFocus = true;
     d.disableClose = true;
     d.data = {
-      title: 'Delete device  "' + v.value.name + ' ' + v.value.addr,
-        message: 'Press <Enter> to confirm',
+      title: $localize `:@@delete-device:Delete device ${v.addr}`,
+        message: $localize `:@@press-enter-to-confirm:Press <Enter> to confirm`,
         value: v
     };
     const dialogRef = this.dialog.open(DialogConfirmComponent, d);
@@ -123,13 +124,13 @@ export class EnvService {
     const d = new MatDialogConfig();
     d.autoFocus = true;
     d.data = {
-      title: v.addr ? 'Device ' + v.addr : 'New device',
+      title: v.addr ? $localize `:@@device-addr:Device ${v.addr}` : `:@@new-device:New device`,
       message: '',
       value: v
     };
     const dialogRef = this.dialog.open(DeviceEditDialogComponent, d);
     return new Promise<string>((resolve, reject) => { 
-      dialogRef.componentInstance.changed.subscribe((v: RequestChangeDevice) => {
+      dialogRef.componentInstance.changed.subscribe((v: RequestPutDevice) => {
         this.app.chDevice(v).subscribe(
           resp => {
             if (resp) {

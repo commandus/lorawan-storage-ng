@@ -10,13 +10,13 @@ export class Settings {
     }
 
     public assign(value: object): void {
+        this.reset();
         if (typeof value !== 'undefined') {
             Object.assign(this, value);
         }
     }
 
     constructor(value: any = {}) {
-        this.reset();
         try {
             let v;
             if (typeof value == 'string')
@@ -31,6 +31,7 @@ export class Settings {
     }
 
     public save(): void {
+        console.log('save', this);
         localStorage.setItem('settings', JSON.stringify(this));
     }
 

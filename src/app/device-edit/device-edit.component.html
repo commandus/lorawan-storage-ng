@@ -11,17 +11,17 @@
         <div>
             <mat-form-field>
                 <mat-label i18n="@@address">Address</mat-label>
-                <input i18n-placeholder="@@address" matInput type="text" placeholder="Address" formControlName="addr">
+                <input i18n-placeholder="@@address-hint" matInput type="text" placeholder="Address (hex)" formControlName="addr">
             </mat-form-field>
             <mat-form-field>
                 <mat-label i18n="@@name">Name</mat-label>
-                <input i18n-placeholder="@@name" matInput type="text" placeholder="name" autocomplete="name" formControlName="name">
+                <input i18n-placeholder="@@name-hint" matInput type="text" placeholder="device name (optional)" autocomplete="name" formControlName="name">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label i18n="@@activation">Activation</mat-label>
-                <input i18n-placeholder="@@activation" matInput type="text" placeholder="activation" formControlName="activation" [matAutocomplete]="acActivation">
+                <input i18n-placeholder="@@activation-hint" matInput type="text" placeholder="Activation type: ABP or OTAA" formControlName="activation" [matAutocomplete]="acActivation">
             </mat-form-field>
             <mat-autocomplete #acActivation="matAutocomplete">
                 <mat-option value="ABP">ABP</mat-option>
@@ -50,37 +50,37 @@
         <div>
             <mat-form-field>
                 <mat-label i18n="@@nwkskey">Network session key</mat-label>
-                <input i18n-placeholder="@@nwkskey" matInput type="text" placeholder="Network session key" formControlName="nwkSKey">
+                <input i18n-placeholder="@@nwkskey-hint" matInput type="text" placeholder="Network session key (hex)" formControlName="nwkSKey">
             </mat-form-field>
             <mat-form-field>
                 <mat-label i18n="@@appskey">App session key</mat-label>
-                <input i18n-placeholder="@@appskey" matInput type="text" placeholder="App session key" formControlName="appSKey">
+                <input i18n-placeholder="@@appskey-hint" matInput type="text" placeholder="App session key (hex)" formControlName="appSKey">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label i18n="@@nwkkey">Network key</mat-label>
-                <input i18n-placeholder="@@nwkkey" matInput type="text" placeholder="Network key" formControlName="nwkKey">
+                <input i18n-placeholder="@@nwkkey-hint" matInput type="text" placeholder="Network key (hex)" formControlName="nwkKey">
             </mat-form-field>
             <mat-form-field>
                 <mat-label i18n="@@appkey">App key</mat-label>
-                <input i18n-placeholder="@@appkey" matInput type="text" placeholder="App key" formControlName="appKey">
+                <input i18n-placeholder="@@appkey-placeholder" matInput type="text" placeholder="App key (hex)" formControlName="appKey">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label i18n="@@devnonce">Device nonce</mat-label>
-                <input i18n-placeholder="@@devnonce" matInput type="text" placeholder="Device nonce" formControlName="devNonce">
+                <input i18n-placeholder="@@devnonce-hint" matInput type="text" placeholder="Device nonce (hex)" formControlName="devNonce">
             </mat-form-field>
             <mat-form-field>
                 <mat-label i18n="@@joinnonce">Join nonce</mat-label>
-                <input i18n-placeholder="@@joinnonce" matInput type="text" placeholder="Join nonce" formControlName="joinNonce">
+                <input i18n-placeholder="@@joinnonce-hint" matInput type="text" placeholder="Join nonce (hex)" formControlName="joinNonce">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label i18n="@@version">Version</mat-label>
-                <input i18n-placeholder="@@version" matInput type="text" placeholder="Version" formControlName="version" [matAutocomplete]="acVersion">
+                <input i18n-placeholder="@@version-hint" matInput type="text" placeholder="version (x.x.x)" formControlName="version" [matAutocomplete]="acVersion">
             </mat-form-field>
             <mat-autocomplete #acVersion="matAutocomplete">
                 <mat-option value="1.0.0">1.0.0</mat-option>
@@ -97,8 +97,8 @@
 
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <button i18n-matTooltip="@@remove" mat-button type="button" color="accent" matTooltip="Remove" (click)="rm()"><mat-icon>delete</mat-icon></button>  
-            <button i18n-matTooltip="@@cancel" i18n="@@cancel" mat-button type="button" matTooltip="Закрыть" (click)="cancel()">Cancel</button>  
-            <button i18n="@@save" color="primary" mat-button type="submit">Save</button>  
+            <button i18n-matTooltip="@@cancel" i18n="@@cancel" mat-button type="button" matTooltip="Cancel" (click)="cancel()">Cancel</button>  
+            <button i18n="@@save" i18n-matTooltip="@@save" color="primary" mat-button type="submit" matTooltip="Save">Save</button>  
         </div>
     </form>
 </div>

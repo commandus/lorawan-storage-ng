@@ -38,6 +38,8 @@ export class DeviceDataSource implements DataSource<Device> {
     // this.env.settings
     this.loadingSubject.next(true);
     let r = new RequestLs;
+    r.code = this.env.settings.credentials.code;
+    r.accessCode = this.env.settings.credentials.accessCode;
     r.offset = ofs;
     r.size = pagesize;
     let rCount = new RequestCount;

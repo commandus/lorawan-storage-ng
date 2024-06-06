@@ -4,7 +4,6 @@
     <body>
       <trans-unit id="address" datatype="html">
         <source>Address</source>
-        <target>Адрес</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">13,14</context>
@@ -16,7 +15,6 @@
       </trans-unit>
       <trans-unit id="address-hint" datatype="html">
         <source>Address (hex)</source>
-        <target>Адрес (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">14,15</context>
@@ -28,7 +26,6 @@
       </trans-unit>
       <trans-unit id="name" datatype="html">
         <source>Name</source>
-        <target>Название</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">17,18</context>
@@ -40,7 +37,6 @@
       </trans-unit>
       <trans-unit id="name-hint" datatype="html">
         <source>device name (optional)</source>
-        <target>название устройства (необязательно)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">18</context>
@@ -48,7 +44,6 @@
       </trans-unit>
       <trans-unit id="activation" datatype="html">
         <source>Activation</source>
-        <target>Активация</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">23,24</context>
@@ -60,7 +55,6 @@
       </trans-unit>
       <trans-unit id="activation-hint" datatype="html">
         <source>Activation type: ABP or OTAA</source>
-        <target>Тип активации: ABP или OTAA</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">24</context>
@@ -72,7 +66,6 @@
       </trans-unit>
       <trans-unit id="class" datatype="html">
         <source>Class</source>
-        <target>Класс</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">31,32</context>
@@ -88,7 +81,6 @@
       </trans-unit>
       <trans-unit id="deveui" datatype="html">
         <source>Device EUI</source>
-        <target>EUI устройства</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">42,43</context>
@@ -104,7 +96,6 @@
       </trans-unit>
       <trans-unit id="appeui" datatype="html">
         <source>App EUI</source>
-        <target>EUI приложения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">46,47</context>
@@ -124,10 +115,13 @@
       </trans-unit>
       <trans-unit id="nwkskey" datatype="html">
         <source>Network session key</source>
-        <target>Сетевой сессионный ключ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">52,53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
+          <context context-type="linenumber">32,33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
@@ -136,7 +130,6 @@
       </trans-unit>
       <trans-unit id="nwkskey-hint" datatype="html">
         <source>Network session key (hex)</source>
-        <target>Сетевой сессионный ключ (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">53</context>
@@ -144,7 +137,6 @@
       </trans-unit>
       <trans-unit id="appskey" datatype="html">
         <source>App session key</source>
-        <target>Сессионный ключ приложения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">56,57</context>
@@ -156,7 +148,6 @@
       </trans-unit>
       <trans-unit id="appskey-hint" datatype="html">
         <source>App session key (hex)</source>
-        <target>Сессионный ключ приложения (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">57</context>
@@ -168,7 +159,6 @@
       </trans-unit>
       <trans-unit id="nwkkey" datatype="html">
         <source>Network key</source>
-        <target>Сетевой ключ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">62,63</context>
@@ -184,7 +174,6 @@
       </trans-unit>
       <trans-unit id="nwkkey-hint" datatype="html">
         <source>Network key (hex)</source>
-        <target>Сетевой ключ (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">63</context>
@@ -192,7 +181,6 @@
       </trans-unit>
       <trans-unit id="appkey" datatype="html">
         <source>App key</source>
-        <target>Ключ приложения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">66,67</context>
@@ -204,7 +192,6 @@
       </trans-unit>
       <trans-unit id="appkey-placeholder" datatype="html">
         <source>App key (hex)</source>
-        <target>Ключ приложения (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">67,68</context>
@@ -212,7 +199,6 @@
       </trans-unit>
       <trans-unit id="devnonce" datatype="html">
         <source>Device nonce</source>
-        <target>nonce устройства</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">72,73</context>
@@ -224,7 +210,6 @@
       </trans-unit>
       <trans-unit id="devnonce-hint" datatype="html">
         <source>Device nonce (hex)</source>
-        <target>nonce устройства (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">73</context>
@@ -236,7 +221,6 @@
       </trans-unit>
       <trans-unit id="joinnonce" datatype="html">
         <source>Join nonce</source>
-        <target>Join nonce</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">76,77</context>
@@ -248,7 +232,6 @@
       </trans-unit>
       <trans-unit id="joinnonce-hint" datatype="html">
         <source>Join nonce (hex)</source>
-        <target>Join nonce (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">77</context>
@@ -260,15 +243,17 @@
       </trans-unit>
       <trans-unit id="version" datatype="html">
         <source>Version</source>
-        <target>Версия</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">82,83</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="version-hint" datatype="html">
-        <source>Version</source>
-        <target>Версия</target>
+        <source>version (x.x.x)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">83</context>
@@ -276,7 +261,6 @@
       </trans-unit>
       <trans-unit id="remove" datatype="html">
         <source>Remove</source>
-        <target>Удалить</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">99</context>
@@ -284,7 +268,6 @@
       </trans-unit>
       <trans-unit id="cancel" datatype="html">
         <source>Cancel</source>
-        <target>Отмена</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">100</context>
@@ -304,7 +287,6 @@
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>Save</source>
-        <target>Сохранить</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-edit/device-edit.component.html</context>
           <context context-type="linenumber">101,102</context>
@@ -316,7 +298,6 @@
       </trans-unit>
       <trans-unit id="class-hint" datatype="html">
         <source>Device class: A, B or C</source>
-        <target>Класс устройства: A, B, C</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
           <context context-type="linenumber">21,23</context>
@@ -324,7 +305,6 @@
       </trans-unit>
       <trans-unit id="appkey-hint" datatype="html">
         <source>App Key (hex)</source>
-        <target>Ключ приложения (шестнадцатиричное число)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
           <context context-type="linenumber">57,59</context>
@@ -332,7 +312,6 @@
       </trans-unit>
       <trans-unit id="name-description" datatype="html">
         <source>Opional device name (up to 8 characters)</source>
-        <target>Необязательное название устройства (до 8 символов)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
           <context context-type="linenumber">81,84</context>
@@ -340,7 +319,6 @@
       </trans-unit>
       <trans-unit id="add-device" datatype="html">
         <source>Add a new device</source>
-        <target>Добавить новое устройство</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/device-list/device-list.component.html</context>
           <context context-type="linenumber">90</context>
@@ -348,7 +326,6 @@
       </trans-unit>
       <trans-unit id="no" datatype="html">
         <source>No</source>
-        <target>Нет</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dialog-confirm/dialog-confirm.component.html</context>
           <context context-type="linenumber">8</context>
@@ -360,7 +337,6 @@
       </trans-unit>
       <trans-unit id="yes" datatype="html">
         <source>Yes</source>
-        <target>Да</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dialog-confirm/dialog-confirm.component.html</context>
           <context context-type="linenumber">9</context>
@@ -372,7 +348,6 @@
       </trans-unit>
       <trans-unit id="code" datatype="html">
         <source>Code</source>
-        <target>Код</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">15,16</context>
@@ -380,7 +355,6 @@
       </trans-unit>
       <trans-unit id="accesscode" datatype="html">
         <source>Access code</source>
-        <target>Код доступа</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">21,22</context>
@@ -388,7 +362,6 @@
       </trans-unit>
       <trans-unit id="login" datatype="html">
         <source>Login</source>
-        <target>Логин</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">28</context>
@@ -404,7 +377,6 @@
       </trans-unit>
       <trans-unit id="try-again" datatype="html">
         <source>Try again</source>
-        <target>Повторите попытку</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.ts</context>
           <context context-type="linenumber">27</context>
@@ -420,7 +392,6 @@
       </trans-unit>
       <trans-unit id="success" datatype="html">
         <source>Success</source>
-        <target>Успешно</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.ts</context>
           <context context-type="linenumber">67</context>
@@ -428,7 +399,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-1" datatype="html">
         <source>device.commandus.com Privacy Policy</source>
-        <target>Политика конфиденциальности device.commandus.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">2,3</context>
@@ -436,7 +406,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-1" datatype="html">
         <source> At device.commandus.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by device.commandus.com and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us via our Github page. </source>
-        <target> Одним из наших главных приоритетов является конфиденциальность наших посетителей. Этот документ о Политике конфиденциальности содержит типы информации, которую собирает и записывает device.commandus.com, а также способы ее использования. Если у вас есть дополнительные вопросы или вам нужна дополнительная информация о нашей Политике конфиденциальности, не стесняйтесь обращаться к нам через нашу страницу Github. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">4,7</context>
@@ -444,7 +413,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-2" datatype="html">
         <source>Log Files</source>
-        <target>Лог-файлы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">9,10</context>
@@ -452,7 +420,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-2" datatype="html">
         <source> device.commandus.com follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services&apos; analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users&apos; movement on the website, and gathering demographic information. </source>
-        <target> device.commandus.com следует стандартной процедуре использования файлов журналов. Эти файлы регистрируют посетителей, когда они посещают веб-сайты. Этим занимаются все хостинговые компании и часть аналитики хостинг-услуг. Информация, собираемая файлами журналов, включает адреса интернет-протокола (IP), тип браузера, поставщика интернет-услуг (ISP), отметку даты и времени, страницы перехода/выхода и, возможно, количество кликов. Они не связаны с какой-либо информацией, позволяющей идентифицировать личность. Целью информации является анализ тенденций, администрирование сайта, отслеживание перемещений пользователей по сайту и сбор демографической информации. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">11,16</context>
@@ -460,7 +427,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-3" datatype="html">
         <source>Cookies and Web Beacons</source>
-        <target>Файлы cookie и веб-маяки</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">18,19</context>
@@ -468,7 +434,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-3" datatype="html">
         <source> Like any other website, device.commandus.com uses &apos;cookies&apos;. These cookies are used to store information including visitors&apos; preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users&apos; experience by customizing our web page content based on visitors&apos; browser type and/or other information. </source>
-        <target> Как и любой другой веб-сайт, device.commandus.com использует файлы cookie. Эти файлы cookie используются для хранения информации, включая предпочтения посетителей, а также страницы веб-сайта, к которым посетитель обращался или посещал. Эта информация используется для оптимизации работы пользователей путем настройки содержимого нашей веб-страницы на основе типа браузера посетителей и/или другой информации. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">20,23</context>
@@ -476,7 +441,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-4" datatype="html">
         <source>Our Advertising Partners</source>
-        <target>Наши рекламные партнеры</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">25,26</context>
@@ -484,7 +448,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-4" datatype="html">
         <source> Some of advertisers on our site may use cookies and web beacons. Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on device.commandus.com, which are sent directly to users&apos; browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit. Note that device.commandus.com has no access to or control over these cookies that are used by third-party advertisers. </source>
-        <target> Некоторые рекламодатели на нашем сайте могут использовать файлы cookie и веб-маяки. Сторонние рекламные серверы или рекламные сети используют такие технологии, как файлы cookie, JavaScript или веб-маяки, которые используются в соответствующих рекламных объявлениях и ссылках, которые появляются на lora.commandus.com и отправляются непосредственно в браузер пользователей. Когда это происходит, они автоматически получают ваш IP-адрес. Эти технологии используются для измерения эффективности рекламных кампаний и/или для персонализации рекламного контента, который вы видите на посещаемых вами веб-сайтах. Обратите внимание, что lora.commandus.com не имеет доступа и контроля над этими файлами cookie, которые используются сторонними рекламодателями. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">27,33</context>
@@ -492,7 +455,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-5" datatype="html">
         <source>Third Part Privacy Policies</source>
-        <target>Политика конфиденциальности третьих сторон</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">36,37</context>
@@ -500,7 +462,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-5" datatype="html">
         <source> device.commandus.com&apos;s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers&apos; respective websites. </source>
-        <target> Политика конфиденциальности device.commandus.com не распространяется на других рекламодателей или веб-сайты. Поэтому мы советуем вам ознакомиться с соответствующей Политикой конфиденциальности этих сторонних рекламных серверов для получения более подробной информации. Он может включать их методы и инструкции о том, как отказаться от определенных опций. Вы можете отключить файлы cookie в настройках вашего браузера. Более подробную информацию об управлении файлами cookie в конкретных веб-браузерах можно найти на веб-сайтах соответствующих браузеров. </target>        
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">38,42</context>
@@ -508,7 +469,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-6" datatype="html">
         <source>Children&apos;s Information</source>
-        <target>Детская информация</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">44,45</context>
@@ -516,7 +476,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-6" datatype="html">
         <source> Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. device.commandus.com does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records. </source>
-        <target> Еще одна часть нашего приоритета — обеспечение защиты детей при использовании Интернета. Мы призываем родителей и опекунов наблюдать, участвовать и/или контролировать и направлять их онлайн-активность. lora.commandus.com сознательно не собирает какую-либо личную информацию от детей в возрасте до 13 лет. Если вы считаете, что ваш ребенок предоставил такого рода информацию на нашем веб-сайте, мы настоятельно рекомендуем вам немедленно связаться с нами, и мы сделаем все возможные усилия по быстрому удалению такой информации из наших записей. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">46,50</context>
@@ -524,7 +483,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-7" datatype="html">
         <source>Online Privacy Policy Only</source>
-        <target>Область применения политики конфиденциальности</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">52,53</context>
@@ -532,7 +490,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-7" datatype="html">
         <source> This privacy policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in device.commandus.com. This policy is not applicable to any information collected offline or via channels other than this website. </source>
-        <target>Эта политика конфиденциальности применяется только к нашей онлайн-деятельности и действительна для посетителей нашего веб-сайта в отношении информации, которую они поделились и/или собрали на lora.commandus.com. Эта политика не применима к какой-либо информации, собранной офлайн или по каналам, отличным от этого веб-сайта. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">54,57</context>
@@ -540,7 +497,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-h-8" datatype="html">
         <source>Consent</source>
-        <target>Согласие</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">58,59</context>
@@ -548,7 +504,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-8" datatype="html">
         <source> By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions. </source>
-        <target> Используя наш веб-сайт, вы тем самым соглашаетесь с нашей Политикой конфиденциальности и соглашаетесь с ее условиями. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">60,63</context>
@@ -556,10 +511,9 @@
       </trans-unit>
       <trans-unit id="update-available" datatype="html">
         <source>A new version is available</source>
-        <target>Доступна новая верcия</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/env.service.ts</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">52</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/sw-update.svc.ts</context>
@@ -568,39 +522,34 @@
       </trans-unit>
       <trans-unit id="update-do" datatype="html">
         <source>Update</source>
-        <target>Обновить</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/env.service.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="delete-device" datatype="html">
         <source>Delete device <x id="PH" equiv-text="v.addr"/></source>
-        <target>Удалить устройство <x id="PH" equiv-text="v.addr"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/service/env.service.ts</context>
-          <context context-type="linenumber">104</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="press-enter-to-confirm" datatype="html">
-        <source>Press &lt;Enter&gt; to confirm</source>
-        <target>Нажмите &lt;Enter&gt; для подтверждения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/env.service.ts</context>
           <context context-type="linenumber">105</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="device-addr" datatype="html">
-        <source>Device <x id="PH" equiv-text="v.addr"/></source>
-        <target>Устройство <x id="PH" equiv-text="v.addr"/></target>
+      <trans-unit id="press-enter-to-confirm" datatype="html">
+        <source>Press &lt;Enter&gt; to confirm</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/env.service.ts</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="device-addr" datatype="html">
+        <source>Device <x id="PH" equiv-text="v.addr"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/service/env.service.ts</context>
+          <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="update-failed" datatype="html">
         <source>Failed to check for updates: </source>
-        <target>Ошибка обновления: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/sw-update.svc.ts</context>
           <context context-type="linenumber">26</context>
@@ -608,7 +557,6 @@
       </trans-unit>
       <trans-unit id="endpoint-name-test-local" datatype="html">
         <source>Test (local host)</source>
-        <source>Тест (localhost)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/service/urn.service.ts</context>
           <context context-type="linenumber">12</context>
@@ -616,7 +564,6 @@
       </trans-unit>
       <trans-unit id="menu" datatype="html">
         <source>Menu</source>
-        <target>Меню</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
           <context context-type="linenumber">2</context>
@@ -628,7 +575,6 @@
       </trans-unit>
       <trans-unit id="lorawan-devices" datatype="html">
         <source>LoRaWAN devices</source>
-        <target>LoRaWAN устройства</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
           <context context-type="linenumber">5,6</context>
@@ -636,7 +582,6 @@
       </trans-unit>
       <trans-unit id="home-page" datatype="html">
         <source>Home page</source>
-        <target>Первая страница</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
           <context context-type="linenumber">10,11</context>
@@ -644,7 +589,6 @@
       </trans-unit>
       <trans-unit id="device-list" datatype="html">
         <source>Devices</source>
-        <target>Устройства</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
           <context context-type="linenumber">11,13</context>
@@ -652,7 +596,6 @@
       </trans-unit>
       <trans-unit id="privacy-policy-menu" datatype="html">
         <source>Privacy policy</source>
-        <target>Политика конфиденциальности</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
           <context context-type="linenumber">13,15</context>
@@ -660,7 +603,6 @@
       </trans-unit>
       <trans-unit id="welcome-text" datatype="html">
         <source>Select menu item at the top</source>
-        <target>Выберите пункт меню наверху</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/welcome-page/welcome-page.component.html</context>
           <context context-type="linenumber">1,2</context>

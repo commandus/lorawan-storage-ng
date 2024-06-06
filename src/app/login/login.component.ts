@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   @Output() cancelled = new EventEmitter<void>();
   public formGroup: FormGroup = new FormGroup({});
   public progress = false;
-  message = 'Попробуйте 2a/2a';
+  message = $localize `:@@try-again:Try again`;
   success: boolean;
 
   constructor(
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       login: [this.credentials ? this.credentials.code : '',
         [ Validators.required ]],
-      password: [this.credentials ? this.credentials.accesscode : '',
+      password: [this.credentials ? this.credentials.accessCode : '',
         [ Validators.required ]
       ]
     });
@@ -64,18 +64,18 @@ export class LoginComponent implements OnInit {
         this.progress = false;
         if (value) {
           this.success = true;
-          this.message = 'Success';
+          this.message = $localize `:@@success:Success`;
           this.logged.emit(this.credentials);
         } else {
           this.success = false;
-          this.message = 'Try again';
+          this.message = $localize `:@@try-again:Try again`;
           // this.cancelled.emit();
         }
       },
       error => {
         this.progress = false;
         this.success = false;
-        this.message = 'Please try again';
+        this.message = $localize `:@@try-again:Try again`;
         // this.cancelled.emit();
       });
   }

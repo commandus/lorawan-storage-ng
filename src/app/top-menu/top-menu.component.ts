@@ -26,7 +26,7 @@ export class TopMenuComponent {
 
   ngOnInit(): void {
     // this.env.calc.version().subscribe(v => this.version = v.version);
-    this.version = "1.0";
+    this.version = '1.0';
   }
 
 

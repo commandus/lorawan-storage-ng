@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { EnvService } from '../service/env.service';
-import { Device } from '../model/device';
-import { RequestChangeDevice } from '../model/request-ch-device';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -10,9 +7,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EnvService } from '../service/env.service';
+import { Device } from '../model/device';
 import { JsonService } from '../service/json.service';
-import { RequestGetByAddr } from '../model/request-get-by-addr';
 import { UrnService } from '../service/urn.service';
+import { RequestGetByAddr } from '../model/request-get-by-addr';
+import { RequestPutDevice } from '../model/request-put-device';
+import { RequestRemoveDevice } from '../model/request-rm-device';
 
 @Component({
   selector: 'app-device-edit',
@@ -25,7 +26,8 @@ import { UrnService } from '../service/urn.service';
 })
 export class DeviceEditComponent implements OnInit {
   @Input() value: Device = new Device;
-  @Output() changed = new EventEmitter<RequestChangeDevice>();
+  @Output() changed = new EventEmitter<RequestPutDevice>();
+  @Output() removed = new EventEmitter<RequestRemoveDevice>();
   @Output() cancelled = new EventEmitter<void>();
   
   public formGroup: FormGroup = new FormGroup({});
@@ -56,15 +58,12 @@ export class DeviceEditComponent implements OnInit {
         this.initForm();
       });
     } else {
+      /*
       this.urn.getSVGByAddr(this.value.addr).subscribe(v => {
         this.buildQrCode(v);
       });
-
+      */
     }
-  }
-
-  buildQrCode(v: string) {
-    console.log(v);
   }
 
   private initForm() {
@@ -90,23 +89,24 @@ export class DeviceEditComponent implements OnInit {
   }
 
   save(): void {
-    const r = new RequestChangeDevice;
+    const r = new RequestPutDevice;
+    r.code = this.app.settings.credentials.code;
+    r.accessCode = this.app.settings.credentials.accessCode;
+
     const v = this.formGroup.getRawValue();
-    r.value.addr = v.addr;
-    r.value.activation = v.activation;
-    r.value.class = v.class;
-    r.value.deveui = v.deveui;
-    r.value.nwkSKey = v.nwkSKey;
-    r.value.appSKey = v.appSKey;
-    r.value.version = v.version;
-    r.value.appeui = v.appeui;
-    r.value.appKey = v.appKey;
-    r.value.nwkKey = v.nwkKey;
-    r.value.devNonce = v.devNonce;
-    r.value.joinNonce = v.joinNonce;
-    r.value.name = v.name;
-    r.operationSymbol = r.value.addr ? '=' : '+';
-    
+    r.addr = v.addr;
+    r.activation = v.activation;
+    r.class = v.class;
+    r.deveui = v.deveui;
+    r.nwkSKey = v.nwkSKey;
+    r.appSKey = v.appSKey;
+    r.version = v.version;
+    r.appeui = v.appeui;
+    r.appKey = v.appKey;
+    r.nwkKey = v.nwkKey;
+    r.devNonce = v.devNonce;
+    r.joinNonce = v.joinNonce;
+    r.name = v.name;
     // save box
     this.changed.emit(r);
   }
@@ -115,13 +115,13 @@ export class DeviceEditComponent implements OnInit {
    * remove box
    */
   rm(): void {
-    const r = new RequestChangeDevice;
-    r.operationSymbol = '-';
-    r.value.addr = this.formGroup.getRawValue().addr;
-    r.value.name = this.formGroup.getRawValue().name;
+    const r = new RequestRemoveDevice;
+    r.code = this.app.settings.credentials.code;
+    r.accessCode = this.app.settings.credentials.accessCode;
+    r.addr = this.formGroup.getRawValue().addr;
     this.app.confirmRmDevice(r).then(v => {
       if (v == 'y')
-        this.changed.emit(r);
+        this.removed.emit(r);
     })
   }
 }
