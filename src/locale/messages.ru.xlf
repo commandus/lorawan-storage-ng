@@ -538,6 +538,38 @@
           <context context-type="linenumber">54,57</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="qr" datatype="html">
+        <source>QR code</source>
+        <target>QR код</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="qr-hint" datatype="html">
+        <source>TR005 LoRaWAN device QR code identifier</source>
+        <target>QR-код идентификатора устройства LoRaWAN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="qr-prop" datatype="html">
+        <source>QR code with proprietary properties</source>
+        <target>QR-код с проприетарными свойствами</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="qr-prop-hint" datatype="html">
+        <source>TR005 LoRaWAN device QR code identifier with proprietary properties</source>
+        <target>QR-код идентификатора устройства LoRaWAN с проприетарными свойствами</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="privacy-policy-h-8" datatype="html">
         <source>Consent</source>
         <target>Согласие</target>
@@ -648,6 +680,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
           <context context-type="linenumber">11,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="device-qr-list" datatype="html">
+        <source>Device QR codes</source>
+        <target>QR коды устройств</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">12,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="privacy-policy-menu" datatype="html">

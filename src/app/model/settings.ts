@@ -31,7 +31,6 @@ export class Settings {
     }
 
     public save(): void {
-        console.log('save', this);
         localStorage.setItem('settings', JSON.stringify(this));
     }
 

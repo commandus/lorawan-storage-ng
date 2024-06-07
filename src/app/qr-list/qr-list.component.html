@@ -1,0 +1,37 @@
+<div style="height: 10pt;">
+    @if (ds.loading| async) {
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+</div>
+ <table mat-table [dataSource]="ds" matSort>
+    <ng-container matColumnDef="addr">
+        <th i18n="@@address" mat-header-cell *matHeaderCellDef>Address</th>
+        <td i18n-matTooltip="@@address-hint" mat-cell *matCellDef="let v" matTooltip="Address (hex)">
+            {{ v.addr }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="qr">
+        <th i18n="@@qr" mat-header-cell *matHeaderCellDef>QR code</th>
+        <td i18n-matTooltip="@@qr-hint" mat-cell *matCellDef="let v" matTooltip="TR005 LoRaWAN device QR code identifier">
+            <img alt="v.addr" width="98" height="98" [src]="urn.url(v.addr)"/>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="qr-prop">
+        <th i18n="@@qr-prop" mat-header-cell *matHeaderCellDef>QR code with proprietary properties</th>
+        <td i18n-matTooltip="@@qr-prop-hint" mat-cell *matCellDef="let v" matTooltip="TR005 LoRaWAN device QR code identifier with proprietary properties">
+            <img alt="v.addr" width="98" height="98" [src]="urn.urlProprietary(v.addr)"/>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th i18n="@@name" mat-header-cell *matHeaderCellDef>Name</th>
+        <td i18n-matTooltip="@@name-description" mat-cell *matCellDef="let v" matTooltip="Opional device name (up to 8 characters)">
+        {{v.name}}
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="edit(row)"></tr>
+</table>
+<mat-paginator [pageSize]="10"></mat-paginator>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <button i18n-matTooltip="@@add-device" mat-button color="primary" matTooltip="Add a new device" (click)="add()"><mat-icon>add</mat-icon></button>
+</div>

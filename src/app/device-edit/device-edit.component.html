@@ -93,7 +93,7 @@
             
         </div>
         <img #qr alt="" width="98" height="98" [src]="urn.url(value.addr)"/>
-        <img #qr alt="" width="98" height="98" [src]="urn.urlProprietary(value.addr)"/>
+        <img #qrProprietary alt="" width="98" height="98" [src]="urn.urlProprietary(value.addr)"/>
 
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <button i18n-matTooltip="@@remove" mat-button type="button" color="accent" matTooltip="Remove" (click)="rm()"><mat-icon>delete</mat-icon></button>  
