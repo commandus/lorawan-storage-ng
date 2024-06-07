@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Device } from '../model/device';
 import { RequestPutDevice } from '../model/request-put-device';
 import { DeviceEditComponent } from '../device-edit/device-edit.component';
+import { RequestRemoveDevice } from '../model/request-rm-device';
 
 @Component({
   selector: 'app-device-edit-dialog',
@@ -13,6 +14,7 @@ import { DeviceEditComponent } from '../device-edit/device-edit.component';
 })
 export class DeviceEditDialogComponent {
   @Output() changed = new EventEmitter<RequestPutDevice>();
+  @Output() removed = new EventEmitter<RequestRemoveDevice>();
   @Output() cancelled = new EventEmitter<void>();
   title: string;
   message: string;
@@ -29,6 +31,11 @@ export class DeviceEditDialogComponent {
 
   onChanged(value: RequestPutDevice) {
     this.changed.emit(value);
+    this.dialogRef.close( { yes: true } );
+  }
+
+  onRemoved(value: RequestRemoveDevice) {
+    this.removed.emit(value);
     this.dialogRef.close( { yes: true } );
   }
 

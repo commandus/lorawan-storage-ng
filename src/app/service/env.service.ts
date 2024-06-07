@@ -134,12 +134,28 @@ export class EnvService {
         this.app.chDevice(v).subscribe(
           resp => {
             if (resp) {
-              resolve("ok");
+              resolve("saved");
             }
           },
           error => {
             reject('fail');
         });    
+      });
+      dialogRef.componentInstance.removed.subscribe((v: RequestRemoveDevice) => {
+        this.confirmRmDevice(v).then(cf => {
+          if (cf == 'y') {
+            this.app.rmDevice(v).subscribe(
+              resp => {
+                if (resp) {
+                  resolve("removed");
+                }
+              },
+              error => {
+                reject('fail');
+            });
+          } else 
+            reject('fail');
+        });
       });
     });
   }

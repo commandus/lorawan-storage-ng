@@ -73,15 +73,22 @@ export class DeviceListComponent {
 
   edit(row: Device) {
     this.env.showDevice(row).then(
-      v=>{
-        this.load();
+      v => {
+        if (v =='saved') {
+          this.load();
+        }
+        if (v =='removed') {
+          this.load();
+        }
       });
   }
 
   add() {
     this.env.showDevice(new Device).then(
-      v=>{
-        this.load();
+      v => {
+        if (v =='saved') {
+          this.load();
+        }
       });
   }
 

@@ -9,6 +9,7 @@ import { RequestGetByEui } from '../model/request-get-by-eui';
 import { RequestCount } from '../model/request-count-device';
 import { RequestCloseResources } from '../model/request-close-resources';
 import { EndPointList } from '../model/service-end-point';
+import { RequestRemoveDevice } from '../model/request-rm-device';
 
 // @see https://stackoverflow.com/questions/65152373/typescript-serialize-bigint-in-json
 declare global
@@ -56,6 +57,10 @@ export class JsonService {
 
   chDevice(request: RequestPutDevice): Observable<Device> {
     return this.httpClient.post<Device>(this.endpoints.current.url, request);
+  }
+
+  rmDevice(request: RequestRemoveDevice): Observable<number> {
+    return this.httpClient.post<number>(this.endpoints.current.url, request);
   }
 
   closeResources(request: RequestCloseResources): Observable<Device> {

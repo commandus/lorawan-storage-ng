@@ -107,21 +107,18 @@ export class DeviceEditComponent implements OnInit {
     r.devNonce = v.devNonce;
     r.joinNonce = v.joinNonce;
     r.name = v.name;
-    // save box
+    // save device
     this.changed.emit(r);
   }
 
   /**
-   * remove box
+   * remove device
    */
   rm(): void {
     const r = new RequestRemoveDevice;
     r.code = this.app.settings.credentials.code;
     r.accessCode = this.app.settings.credentials.accessCode;
     r.addr = this.formGroup.getRawValue().addr;
-    this.app.confirmRmDevice(r).then(v => {
-      if (v == 'y')
-        this.removed.emit(r);
-    })
+    this.removed.emit(r);
   }
 }

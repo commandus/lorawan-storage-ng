@@ -1,2 +1,2 @@
 <h2 mat-dialog-title>{{title}}</h2>
-<app-device-edit [value]="value" (changed)="onChanged($event)" (cancelled)="onCancel()"></app-device-edit>
+<app-device-edit [value]="value" (changed)="onChanged($event)" (removed)="onRemoved($event)" (cancelled)="onCancel()"></app-device-edit>
