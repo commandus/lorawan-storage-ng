@@ -14,7 +14,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">8,9</context>
+          <context context-type="linenumber">12,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="address-hint" datatype="html">
@@ -29,7 +29,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">9,10</context>
+          <context context-type="linenumber">13,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="name" datatype="html">
@@ -44,7 +44,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">26,27</context>
+          <context context-type="linenumber">35,36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="name-hint" datatype="html">
@@ -330,7 +330,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">27,29</context>
+          <context context-type="linenumber">36,38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add-device" datatype="html">
@@ -341,7 +341,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="no" datatype="html">
@@ -529,22 +529,37 @@
           <context context-type="linenumber">60,63</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="qrShowCodes" datatype="html">
+        <source>Show QR code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="qr" datatype="html">
         <source>QR code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">14,15</context>
+          <context context-type="linenumber">7</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="qr-hint" datatype="html">
-        <source>TR005 LoRaWAN device QR code identifier</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">15,16</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">28,29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="qr-prop" datatype="html">
         <source>QR code with proprietary properties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="qr-hint" datatype="html">
+        <source>TR005 LoRaWAN device QR code identifier</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
           <context context-type="linenumber">20,21</context>
@@ -554,7 +569,7 @@
         <source>TR005 LoRaWAN device QR code identifier with proprietary properties</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/qr-list/qr-list.component.html</context>
-          <context context-type="linenumber">21,22</context>
+          <context context-type="linenumber">29,30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="update-available" datatype="html">

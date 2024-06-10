@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleChange, MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { UrnService } from '../service/urn.service';
 
@@ -23,7 +24,7 @@ class dumbCollectionViewer implements CollectionViewer {
   selector: 'app-qr-list',
   standalone: true,
   imports: [ CommonModule, MatIconModule, MatPaginatorModule, MatProgressBarModule, MatTableModule, MatSortModule,
-    MatButtonModule, MatTooltipModule ],
+    MatButtonModule, MatTooltipModule, MatButtonToggleModule ],
   templateUrl: './qr-list.component.html',
   styleUrl: './qr-list.component.scss'
 })
@@ -34,7 +35,8 @@ export class QrListComponent {
   public ds: DeviceDataSource;
   public selection = new SelectionModel<number>(true, []);
   public selectionMode = 0; // 0- manually selected, 1- select all, 2- unselect all
-  public displayedColumns: string[] = ['addr', 'qr', 'qr-prop', 'name'];
+  public displayedColumns: string[] = ['addr', 'qr', 'name'];
+  public showColumns = 'qr';
   
   constructor(
     public env: EnvService,
@@ -96,6 +98,11 @@ export class QrListComponent {
 
   reload(): void {
     this.paginator.pageIndex = 0;
+    this.load();
+  }
+
+  onChange($event: MatButtonToggleChange) {
+    console.log($event);
     this.load();
   }
 
