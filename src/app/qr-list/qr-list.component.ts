@@ -109,7 +109,6 @@ export class QrListComponent {
   }
 
   onChange($event: MatButtonToggleChange) {
-    console.log($event);
     this.load();
   }
 
