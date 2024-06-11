@@ -14,6 +14,7 @@ import { JsonService } from './json.service';
 import { Credentials } from '../model/credentials';
 import { DialogLoginComponent } from '../dialog-login/dialog-login.component';
 import { RequestRemoveDevice } from '../model/request-rm-device';
+import { DialogQrCodeComponent } from '../dialog-qr-code/dialog-qr-code.component';
 
 @Injectable({
   providedIn: 'root'
@@ -158,6 +159,23 @@ export class EnvService {
         });
       });
     });
+  }
+
+  public showQrCode(
+    v: Device,
+    showProprietary: boolean
+  ) : Promise<string> {
+    const d = new MatDialogConfig();
+    d.autoFocus = true;
+    d.data = {
+      title: v.addr ? $localize `:@@device-addr:Device ${v.addr}` : `:@@new-device:New device`,
+      value: v,
+      qrProprietary: showProprietary
+    };
+    const dialogRef = this.dialog.open(DialogQrCodeComponent, d);
+    return new Promise<string>((resolve, reject) => {
+      resolve("ok");
+      });
   }
 
   public login() : Promise<string> {

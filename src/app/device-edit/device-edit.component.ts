@@ -26,6 +26,7 @@ import { RequestRemoveDevice } from '../model/request-rm-device';
 })
 export class DeviceEditComponent implements OnInit {
   @Input() value: Device = new Device;
+  
   @Output() changed = new EventEmitter<RequestPutDevice>();
   @Output() removed = new EventEmitter<RequestRemoveDevice>();
   @Output() cancelled = new EventEmitter<void>();
@@ -121,4 +122,12 @@ export class DeviceEditComponent implements OnInit {
     r.addr = this.formGroup.getRawValue().addr;
     this.removed.emit(r);
   }
+
+  showQrCode(showProprietary: boolean) {
+    this.app.showQrCode(this.value, showProprietary).then(
+      value => {
+      }
+    );
+  }
+
 }

@@ -75,6 +75,13 @@ export class QrListComponent {
     this.ds.load(this.paginator.pageIndex * this.paginator.pageSize, this.paginator.pageSize);
   }
 
+  showQrCode(v: Device) {
+    this.env.showQrCode(v, this.showColumns == 'qr-prop').then(
+      value => {
+      }
+    );
+  }
+
   edit(row: Device) {
     this.env.showDevice(row).then(
       v => {
