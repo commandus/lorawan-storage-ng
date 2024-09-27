@@ -1,7 +1,46 @@
 # LorawanStorageNg
 
+Web interface for LoRaWAN identity storage
+[https://github.com/commandus/lorawan-storage-ng](https://github.com/commandus/lorawan-storage-ng)
+
+Requires [https://github.com/commandus/lorawan-storage](https://github.com/commandus/lorawan-storage) built with -DENABLE_HTTP=on -DENABLE_JSON=on -DENABLE_QRCODE=on options.
+
+## Quick start
+
+Run 
+
+```
+npm install
+```
+to install dependencies
+
+Run lorawan-identity-service on ports:
+
+- JSON service localhost:4246
+- SVG QR code localhost:4248 
+
+Run
+```
+ng serve
+```
+to start service locally.
+
+## Production deployment
+
+- in src/app/json.ts file replace SVG http://localhost:4246 to the production address (usually behind reverse proxy such nginx)
+- in src/app/urn.service.ts file replace SVG http://localhost:4248 to the production address (usually behind reverse proxy such nginx)
+
+Run 
+```
+ng build
+```
+and distribute generated files from the /dist folder.
+
+## Notices
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
 
+```
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm use v22.4.1
 npm install -g @angular/cli@latest
@@ -10,7 +49,7 @@ npm install
 ng add @angular/localize
 npm install @angular/material
 npm install @angular/service-worker
-
+```
 
 ## Development server
 
